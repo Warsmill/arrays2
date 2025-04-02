@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         int[] costsPerMonth = new int[]{20_004, 25_000, 19_000, 17_000, 23_000};
@@ -29,8 +31,11 @@ public class Main {
         System.out.println("Средняя сумма трат за месяц составила " + averageCostsPerMonth + " рублей");
 
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--){
-            System.out.print(reverseFullName[i]);
+        for (int i = 0, number = reverseFullName.length - 1;i < number; number--, i++) {
+            char x = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[number];
+            reverseFullName[number] = x;
         }
+        System.out.print(reverseFullName);
     }
 }
